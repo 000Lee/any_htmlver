@@ -1,0 +1,13 @@
+# Checkpoint 폴더
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# JSON 결과 파일들
+*_result.json
+*_checkpoint.json
+*_insert.json
+*_convert.json
+
+# 또는 모든 JSON 파일 제외하려면
+*.json
+*.cmds
