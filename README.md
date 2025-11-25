@@ -166,7 +166,8 @@ jupyter notebook
 - 모든 폴더 안에는 인사정보 CSV 파일(새로운 조직도)이 있어야 함
 
 ### 이슈 4: 참조문서, 결재선 크롤링은 java로 실행함
-``` 참조문서 수집용 테이블 (DB에서 실행)
+- 참조문서 수집용 테이블 (DB에서 실행)
+``` 
 USE any_approval;
 CREATE TABLE reference_documents (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -177,7 +178,8 @@ CREATE TABLE reference_documents (
     INDEX idx_reference (reference_document_id)
 );
 ```
-```결재선 수집용 테이블 (연도 변경하기 2025-> ???) (DB에서 실행)
+- 결재선 수집용 테이블 (연도 변경하기 2025-> ???) (DB에서 실행)
+```
 create table approval_data_2025
 (
     record_id     int          null,
