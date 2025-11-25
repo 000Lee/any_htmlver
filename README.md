@@ -17,6 +17,10 @@
 ### 이슈 3: 인사정보 CSV 필수
 - 모든 폴더 안에는 인사정보 CSV 파일(새로운 조직도)이 있어야 함
 
+### 이슈 4: 참조문서, 결재선 크롤링은 java로 실행함
+참조문서 이슈 폴더 안에 AnyFiveReferenceDocCrawler.java와 AnyFiveActiviesCrawler.java로 크롤링을 하고
+참조문서의 경우에는 참조문서 이슈폴더의 참조문서를DB에 적재.ipynb를 실행
+결재선의 경우에는 각각의 연도별 폴더의 10_결재선시간DB버전.ipynb을 실행
 ---
 
 ## 📂 프로젝트 구조
