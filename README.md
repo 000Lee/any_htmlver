@@ -3,7 +3,155 @@
 다운로드한 HTML 파일을 기준으로 필요한 정보만 크롤링하여 DB에 저장하고 `.cmds` 파일을 생성하는 프로젝트입니다.
 
 ---
+# 설치 가이드
 
+이 프로젝트를 실행하기 위해 필요한 모든 소프트웨어 및 패키지 설치 가이드입니다.
+
+---
+
+## 📋 설치 방법 (2가지 중 선택)
+
+### 방법 1: Anaconda 설치 
+
+**Anaconda 하나만 설치하면 Python + Jupyter + 기본 패키지가 모두 설치됩니다.**
+
+**다운로드**: https://www.anaconda.com/download
+
+**설치 후 확인:**
+```bash
+python --version
+jupyter --version
+```
+
+**추가 패키지 설치:**
+```bash
+pip install beautifulsoup4 lxml pymysql selenium
+```
+
+---
+
+### 방법 2: 개별 설치
+
+#### 1. Python 3.8 이상 설치
+
+**다운로드**: https://www.python.org/downloads/
+
+**설치 시 주의사항:**
+- ✅ "Add Python to PATH" 반드시 체크
+
+**설치 확인:**
+```bash
+python --version
+```
+
+#### 2. Jupyter Notebook 설치
+```bash
+pip install jupyter
+```
+
+#### 3. 필요한 패키지 설치
+```bash
+pip install beautifulsoup4 lxml pymysql pandas pytz selenium sqlalchemy openpyxl
+```
+
+---
+
+## 📦 나머지 필수 소프트웨어
+
+### MariaDB 
+
+**MariaDB 다운로드**: https://mariadb.org/download/
+
+**설치 후 DB 생성:**
+```sql
+CREATE DATABASE any_approval 
+CHARACTER SET utf8mb4 
+COLLATE utf8mb4_unicode_ci;
+```
+
+**접속 정보 확인:**
+- Host: `localhost`
+- Port: `3306` (기본값)
+- User: `root` (기본값)
+- Password: 설치 시 설정한 비밀번호
+
+---
+
+### Chrome 드라이버
+
+자바 크롤링 작업에 필요합니다.
+
+**참고:** 파이썬에서 ChromeDriver는 Selenium이 자동으로 관리하므로 별도 설치 불필요
+
+---
+
+## 🔧 초기 설정
+
+### 1. DB 접속 정보 설정
+
+각 스크립트의 아래 부분을 실제 환경에 맞게 수정:
+```python
+db_config = {
+    'host': 'localhost',
+    'user': 'root',              # ← 여기 수정
+    'password': '1234',          # ← 여기 수정
+    'database': 'any_approval'
+}
+```
+
+---
+
+### 2. 인사정보 CSV 준비
+
+각 연도 폴더에 `인사정보_부서코드추가.csv` 파일을 배치해야 합니다.
+
+**CSV 파일 형식:**
+| 사원명 | ID | 부서 | 사원번호 | 직위 | 부서코드 |
+|--------|-----|------|----------|------|----------|
+| 홍길동 | hong | 개발팀 | 001 | 과장 | DEV01 |
+
+---
+
+### 3. 파일 경로 설정
+
+각 스크립트에서 `#여기를 수정하세요` 주석을 찾아 수정:
+```python
+# 예시
+base_path = r'C:\Users\LEEJUHWAN\Downloads\2010-01-01~2010-12-31\html'  # ← 실제 경로로 수정
+end_year = 2010                                                           # ← 작업할 연도로 수정
+```
+
+---
+
+## ✅ 설치 확인
+
+### 1. Python 및 패키지 확인
+```bash
+python --version
+pip list
+```
+
+### 2. DB 연결 테스트
+```python
+import pymysql
+
+conn = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='1234',
+    database='any_approval'
+)
+print("✅ DB 연결 성공!")
+conn.close()
+```
+
+### 3. Jupyter 실행 테스트
+```bash
+jupyter notebook
+```
+브라우저가 자동으로 열리면 정상
+
+---
 ## 📌 주요 이슈
 
 ### 이슈 1: 초기 버전과 개선 버전
@@ -18,6 +166,30 @@
 - 모든 폴더 안에는 인사정보 CSV 파일(새로운 조직도)이 있어야 함
 
 ### 이슈 4: 참조문서, 결재선 크롤링은 java로 실행함
+``` 참조문서 수집용 테이블 (DB에서 실행)
+USE any_approval;
+CREATE TABLE reference_documents (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    source_document_id VARCHAR(20),
+    reference_document_id VARCHAR(20),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_source (source_document_id),
+    INDEX idx_reference (reference_document_id)
+);
+```
+```결재선 수집용 테이블 (연도 변경하기 2025-> ???) (DB에서 실행)
+create table approval_data_2025
+(
+    record_id     int          null,
+    document_id   varchar(255) null,
+    post_title    varchar(512) null,
+    sequence      int          null,
+    status        varchar(50)  null,
+    approval_date varchar(50)  null,
+    department    varchar(100) null,
+    approver      varchar(100) null
+);
+```
 - 참조문서 이슈 폴더 안에 AnyFiveReferenceDocCrawler.java와 AnyFiveActiviesCrawler.java로 크롤링을 하고
 - 참조문서의 경우에는 참조문서 이슈폴더의 참조문서를DB에 적재.ipynb를 실행
 - 결재선의 경우에는 각각의 연도별 폴더의 10_결재선시간DB버전.ipynb을 실행
