@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>법인카드 사용내역 정산 보고_5월_편영수K</title>
+    <style>
+
+/* StyleSheet 0: http://office.anyfive.com/resources/abc/css/apr/apr.doc.print.jstl.css?version=20251030 */
+html { overflow-y: scroll; }
+html, body, span, dl, dt, dd, h1, h2, h3, h4, h5, h6, blockquote, address, pre, cite, form, fieldset, caption, input, textarea, select { margin: 0px; padding: 0px; }
+#header ul, #header ol, #header li { margin: 0px; padding: 0px; }
+.table01_box ul, .table01_box ol, .table01_box li { margin: 0px; padding: 0px; }
+.table02_box ul, .table02_box ol, .table02_box li { margin: 0px; padding: 0px; }
+.table04_box ul, .table04_box ol, .table04_box li { margin: 0px; padding: 0px; }
+.table05_box ul, .table05_box ol, .table05_box li { margin: 0px; padding: 0px; }
+p { margin-top: 0px; margin-bottom: 0px; }
+.company, .team, #apprLineArea > p, .table02_box > p { font-size: 12px; font-family: MalgunGothic; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+fieldset, img, abbr, acronym { border: 0px none; }
+#header ul, #header ol { list-style: none; }
+.table01_box ul, .table01_box ol { list-style: none; }
+.table02_box ul, .table02_box ol { list-style: none; }
+.table04_box ul, .table04_box ol { list-style: none; }
+.table05_box ul, .table05_box ol { list-style: none; }
+address, caption, em, cite { font-weight: normal; font-style: normal; }
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+hr { display: none; }
+a { text-decoration: none; }
+a:link { text-decoration: none; color: rgb(120, 120, 120); }
+a:visited { text-decoration: none; color: rgb(120, 120, 120); }
+a:active, a:focus { text-decoration: none; color: rgb(120, 120, 120); }
+a:hover { text-decoration: none; color: rgb(120, 120, 120); }
+select { vertical-align: middle; }
+.clear { display: block; float: none; clear: both; height: 0px; width: 100%; overflow: hidden; font-size: 0px !important; line-height: 0 !important; margin: 0px !important; padding: 0px !important; }
+#p_wrapper { width: 100%; }
+#header { width: 100%; height: 55px; background: url("../../images/apr/title_bg.gif") 0px bottom repeat-x rgb(255, 255, 255); position: fixed; top: 0px; z-index: 10; }
+#header h1 { margin: 15px 0px 0px 10px; float: left; }
+#header .menu { margin: 8px 0px 0px 20px; float: left; width: 520px; }
+#header .menu li { position: relative; float: left; font-family: 돋움; font-size: 11px; color: rgb(93, 93, 93); margin-bottom: 4px; }
+#header .menu li label { position: absolute; top: 0px; left: 15px; }
+#header .btn { font-family: 돋움; font-size: 12px; float: right; margin: 10px 13px 0px 0px; }
+#header .btn a.print { display: inline-block; padding: 4px; border: 1px solid rgb(218, 218, 218); width: 40px; height: 14px; text-align: center; }
+#header .btn a.print:hover, #header .btn a.close:hover { display: inline-block; padding: 4px; background: rgb(148, 146, 151); border: 1px solid rgb(122, 122, 122); width: 40px; height: 14px; text-align: center; color: rgb(255, 255, 255); }
+#header .btn a.close { display: inline-block; padding: 4px; margin-left: 4px; background: rgb(255, 255, 255); border: 1px solid rgb(218, 218, 218); width: 40px; height: 14px; text-align: center; }
+#header .btn a.previousPrintBtn:hover { display: inline-block; padding: 4px 6px; background: rgb(41, 133, 220); border: 1px solid rgb(41, 133, 220); height: 14px; text-align: center; color: rgb(255, 255, 255); }
+#header .btn a.previousPrintBtn { display: inline-block; padding: 4px 6px; color: rgb(0, 88, 179); margin-left: 4px; background: rgb(255, 255, 255); border: 1px solid rgb(41, 133, 220); height: 14px; text-align: center; }
+.content { border: 1px solid rgb(255, 255, 255); margin: 15px 10px 0px; padding: 10px 5px 6px; min-width: 850px; }
+#middle .content h1 { width: 100%; font-size: 25px; display: inline-block; font-family: 돋움; text-align: center; }
+#middle .content h2 { width: 100%; font-size: 25px; display: inline-block; font-family: 돋움; text-align: center; }
+#middle .content .company { float: left; font-family: 돋움; font-size: 14px; font-weight: bold; margin: 10px 0px 0px 10px; }
+#middle .content .team { float: right; font-family: 돋움; font-size: 14px; font-weight: bold; margin: 10px 10px 0px 0px; }
+.table01_box { border-top: 1px solid rgb(0, 0, 0); margin: 5px 0px 0px; min-width: 850px; }
+.table01 { width: 100%; border-top: 1px solid rgb(0, 0, 0); table-layout: fixed; border-collapse: collapse; font-family: 돋움; font-size: 12px; }
+.table01 td div.bg01 { background: rgb(255, 255, 255); height: 25px; display: table-cell; vertical-align: middle; width: 300px; }
+.table01 td div.bg02 { background: rgb(255, 255, 255); height: 77px; position: relative; z-index: 2; }
+.table01 td div.bg02 .sign { position: absolute; z-index: 1; top: 0px; left: 50%; margin-left: -38px; height: 77px; opacity: 0.3; }
+.table01 td div.bg02 .text { position: absolute; z-index: 2; top: 0px; height: 77px; left: 50%; width: 74px; margin-left: -37px; display: table-cell; vertical-align: middle; }
+.table01 td div.bg02 .text ul { position: relative; height: 77px; width: 74px; display: table-cell; vertical-align: middle; }
+.table01 caption { display: none; }
+.table01 th { background: rgb(230, 230, 230); border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-top: 1px solid rgb(0, 0, 0); text-align: center; height: 25px; min-width: 74px; }
+.table01 td { border-bottom: 1px solid rgb(0, 0, 0); border-top: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); text-align: center; background: rgb(230, 230, 230); line-height: 16px; }
+.boeder_left { border-right: 1px solid rgb(0, 0, 0); }
+.boeder_top { border-top: 1px solid rgb(0, 0, 0); }
+#middle .boeder_bnone { border-bottom: none; }
+.table01 span { display: block; }
+.table01 span.red { color: rgb(255, 0, 0); font-weight: bold; font-size: 12px; }
+.table02 { table-layout: fixed; border-collapse: collapse; font-family: 돋움; font-size: 12px; width: 100%; }
+.table02 td div.bg01 { background: rgb(255, 255, 255); height: 25px; display: table-cell; vertical-align: middle; width: 300px; }
+.table02 td div.bg02 { background: rgb(255, 255, 255); display: table-cell; vertical-align: middle; width: 300px; overflow: hidden; }
+.table02 th div.bg02 { background: rgb(255, 255, 255); height: 77px; display: table-cell; vertical-align: middle; width: 300px; }
+.table02 caption { display: none; }
+.table02 th { background: rgb(230, 230, 230); border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); text-align: center; height: 25px; }
+.table02 td { border-top: 1px solid rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); text-align: center; background: rgb(230, 230, 230); line-height: 16px; }
+.table02 span { display: block; }
+.table02 span.red { color: rgb(255, 0, 0); font-weight: bold; font-size: 12px; }
+.table02_box { border-top: 1px solid rgb(0, 0, 0); margin: 5px 0px 0px; min-width: 850px; }
+.table03 { width: 100%; border-top: 1px solid rgb(0, 0, 0); table-layout: fixed; border-collapse: collapse; font-family: 돋움; font-size: 12px; }
+.table03 caption { display: none; }
+.table03 th { background: rgb(230, 230, 230); border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-top: 1px solid rgb(0, 0, 0); text-align: center; height: 25px; }
+.table03 td { border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); line-height: 14px; padding-left: 10px; }
+.table03_box { border-top: 1px solid rgb(0, 0, 0); margin: 5px 0px 0px 5px; }
+.table04 { width: 100%; border-top: 1px solid rgb(0, 0, 0); table-layout: fixed; border-collapse: collapse; font-family: 돋움; font-size: 12px; }
+.table04 .user { color: rgb(0, 51, 153); }
+.table04 .user img { position: relative; top: 2px; margin-right: 5px; }
+.table04 .file img, .table04 .doc img { position: relative; top: 1px; margin-right: 5px; }
+.table04_box { border-top: 1px solid rgb(0, 0, 0); margin: 5px 0px 0px; width: 100%; min-width: 850px; }
+.table04 caption { display: none; }
+.table04 th { background: rgb(230, 230, 230); border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-top: 1px solid rgb(0, 0, 0); text-align: center; height: 25px; }
+.table04 td { border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); line-height: 16px; padding: 10px; }
+.table05_box { border-top: 1px solid rgb(0, 0, 0); margin: 5px 0px 0px; width: 100%; display: none; min-width: 850px; }
+.table04_box_form { margin: 5px 0px 0px; width: 100%; display: flex; justify-content: center; align-items: flex-start; }
+.table04_form { width: 100%; border-top: 1px solid rgb(0, 0, 0); table-layout: fixed; border-collapse: collapse; font-size: 12px; }
+.table04_form th { background: rgb(244, 244, 244); border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-top: 1px solid rgb(0, 0, 0); text-align: center; height: 25px; font-weight: normal; }
+.table04_form td { border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); line-height: 16px; padding: 10px; }
+.table04_form caption { display: none; }
+.table05_box_form { margin: 5px 0px 0px; width: 100%; display: none; justify-content: center; align-items: flex-start; }
+.content_box { border: 1px solid rgb(0, 0, 0); margin: 5px 0px 0px; width: 99.9%; word-break: break-all; overflow: hidden; min-width: 850px; }
+td.bgw { background: rgb(255, 255, 255); }
+@media print {
+  #header, #noprint { display: none; }
+}
+.approvalOpinionCode0 { padding: 0px 5px 2px; border-radius: 3px; color: rgb(255, 255, 255); background-color: rgb(243, 132, 5); font-family: "Malgun Gothic", 돋움, dotum, 굴림, Gulim, Helvetica, AppleGothic, Tahoma, Verdana; }
+.approvalOpinionCode1 { padding: 0px 5px 2px; border-radius: 3px; color: rgb(255, 255, 255); background-color: rgb(102, 153, 255); font-family: "Malgun Gothic", 돋움, dotum, 굴림, Gulim, Helvetica, AppleGothic, Tahoma, Verdana; }
+.approvalOpinionCode2 { padding: 0px 5px 2px; border-radius: 3px; color: rgb(255, 255, 255); background-color: rgb(159, 201, 60); font-family: "Malgun Gothic", 돋움, dotum, 굴림, Gulim, Helvetica, AppleGothic, Tahoma, Verdana; }
+.approvalOpinionCode3 { padding: 0px 5px 2px; border-radius: 3px; color: rgb(255, 255, 255); background-color: rgb(255, 187, 0); font-family: "Malgun Gothic", 돋움, dotum, 굴림, Gulim, Helvetica, AppleGothic, Tahoma, Verdana; }
+.approvalOpinionCode4 { padding: 0px 5px 2px; border-radius: 3px; color: rgb(255, 255, 255); background-color: rgb(255, 102, 102); font-family: "Malgun Gothic", 돋움, dotum, 굴림, Gulim, Helvetica, AppleGothic, Tahoma, Verdana; }
+.approvalOpinionCode5 { padding: 0px 5px 2px; border-radius: 3px; color: rgb(255, 255, 255); background-color: rgb(159, 201, 60); font-family: "Malgun Gothic", 돋움, dotum, 굴림, Gulim, Helvetica, AppleGothic, Tahoma, Verdana; }
+.approvalOpinionCode6 { padding: 0px 5px 2px; border-radius: 3px; color: rgb(255, 255, 255); background-color: rgb(255, 187, 0); font-family: "Malgun Gothic", 돋움, dotum, 굴림, Gulim, Helvetica, AppleGothic, Tahoma, Verdana; }
+.approvalOpinionCode7 { padding: 0px 5px 2px; border-radius: 3px; color: rgb(255, 255, 255); background-color: rgb(165, 102, 255); font-family: "Malgun Gothic", 돋움, dotum, 굴림, Gulim, Helvetica, AppleGothic, Tahoma, Verdana; }
+.approvalOpinionCode8 { padding: 0px 5px 2px; border-radius: 3px; color: rgb(255, 255, 255); background-color: rgb(255, 102, 102); font-family: "Malgun Gothic", 돋움, dotum, 굴림, Gulim, Helvetica, AppleGothic, Tahoma, Verdana; }
+.approvalOpinionCode9 { padding: 0px 5px 2px; border-radius: 3px; color: rgb(255, 255, 255); background-color: rgb(174, 178, 189); font-family: "Malgun Gothic", 돋움, dotum, 굴림, Gulim, Helvetica, AppleGothic, Tahoma, Verdana; }
+.approvalOpinionCodeH { padding: 0px 5px 2px; border-radius: 3px; color: rgb(255, 255, 255); background-color: rgb(246, 145, 178); font-family: "Malgun Gothic", 돋움, dotum, 굴림, Gulim, Helvetica, AppleGothic, Tahoma, Verdana; }
+.F_12_black_b { color: rgb(0, 0, 0); font-size: 12px; font-weight: bold; }
+.F_11_gray { color: rgb(153, 153, 153); font-size: 12px; font-weight: 100; }
+.fileIcon { display: inline-block; width: 16px; height: 16px; background-repeat: no-repeat; text-indent: -9999px; }
+.file_folder { background: url("../../images/diskfile_ico.png") 0px -10px; }
+.file_folder_share { background: url("../images/diskfile_ico.png") -258px -10px; }
+.file_image { background: url("../../images/diskfile_ico.png") -21px -10px; }
+.file_zip { background: url("../../images/diskfile_ico.png") -42px -10px; }
+.file_hwp { background: url("../../images/diskfile_ico.png") -63px -10px; }
+.file_xls { background: url("../../images/diskfile_ico.png") -83px -10px; }
+.file_txt { background: url("../../images/diskfile_ico.png") -104px -10px; }
+.file_exe { background: url("../../images/diskfile_ico.png") -125px -10px; }
+.file_pdf { background: url("../../images/diskfile_ico.png") -147px -10px; }
+.file_html { background: url("../../images/diskfile_ico.png") -170px -10px; }
+.file_ppt { background: url("../../images/diskfile_ico.png") -193px -10px; }
+.file_ect { background: url("../../images/diskfile_ico.png") -215px -10px; }
+.file_doc { background: url("../../images/diskfile_ico.png") -237px -10px; }
+.o-i-min-fileList { background: url("../../images/brd/ico_notice.png") no-repeat; width: 13px; height: 17px; }
+.disInline { display: inline-block; }
+.dispNone { display: none; }
+.verti_Top { vertical-align: top; }
+.o-i-view-minu { display: inline-block; background: url("../../images/mai/ico_btn_minu.png") no-repeat; width: 14px; height: 14px; text-indent: -9999px; cursor: pointer; margin-top: 2px; }
+.o-i-view-plus { display: inline-block; background: url("../../images/mai/ico_btn_plus.png") no-repeat; width: 14px; height: 14px; text-indent: -9999px; cursor: pointer; margin-top: 2px; }
+.abc-box { position: relative; padding: 10px; border: 1px solid rgb(197, 197, 197); border-radius: 4px; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 2px; }
+
+/* StyleSheet 1: http://office.anyfive.com/resources/abc/css/font-load.css?version=20251030 */
+@font-face { font-family: MalgunGothic; src: url("./abc-common/webfont/malgun.woff") format("woff"), url("./abc-common/webfont/malgun.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+body { font-family: MalgunGothic, 돋움, Dotum, 굴림, Gulim, 바탕, Batang, 궁서, Gungsuh, Helvetica, AppleGothic, Tahoma, Verdana; font-size: 12px; }
+
+/* StyleSheet 2: http://office.anyfive.com/resources/jquery.qtip/jquery.qtip.min.css?version=20251030 */
+.qtip, .qtip { position: absolute; left: -28000px; top: -28000px; display: none; max-width: 280px; min-width: 50px; font-size: 10.5px; line-height: 12px; direction: ltr; }
+.qtip-content { position: relative; padding: 5px 9px; overflow: hidden; text-align: left; overflow-wrap: break-word; }
+.qtip-titlebar { position: relative; padding: 5px 35px 5px 10px; overflow: hidden; border-width: 0px 0px 1px; font-weight: 700; }
+.qtip-titlebar + .qtip-content { border-top-width: 0px !important; }
+.qtip-close { position: absolute; right: -9px; top: -9px; cursor: pointer; outline: none medium; border-width: 1px; border-style: solid; border-color: transparent; }
+.qtip-titlebar .qtip-close { right: 4px; top: 50%; margin-top: -9px; }
+* html .qtip-titlebar .qtip-close { top: 16px; }
+.qtip-titlebar .ui-icon, .qtip-icon .ui-icon { display: block; text-indent: -1000em; direction: ltr; vertical-align: middle; }
+.qtip-icon, .qtip-icon .ui-icon { border-radius: 3px; text-decoration: none; }
+.qtip-icon .ui-icon { width: 18px; height: 14px; text-align: center; text-indent: 0px; font: bold 10px / 13px Tahoma, sans-serif; color: inherit; background: none -100em -100em no-repeat transparent; }
+.qtip-focus { }
+.qtip-hover { }
+.qtip-default { border-width: 1px; border-style: solid; border-color: rgb(241, 208, 49); background-color: rgb(255, 255, 163); color: rgb(85, 85, 85); }
+.qtip-default .qtip-titlebar { background-color: rgb(255, 239, 147); }
+.qtip-default .qtip-icon { border-color: rgb(204, 204, 204); background: rgb(241, 241, 241); color: rgb(119, 119, 119); }
+.qtip-default .qtip-titlebar .qtip-close { border-color: rgb(170, 170, 170); color: rgb(17, 17, 17); }
+.qtip-light { background-color: rgb(255, 255, 255); border-color: rgb(226, 226, 226); color: rgb(69, 69, 69); }
+.qtip-light .qtip-titlebar { background-color: rgb(241, 241, 241); }
+.qtip-dark { background-color: rgb(80, 80, 80); border-color: rgb(48, 48, 48); color: rgb(243, 243, 243); }
+.qtip-dark .qtip-titlebar { background-color: rgb(64, 64, 64); }
+.qtip-dark .qtip-icon { border-color: rgb(68, 68, 68); }
+.qtip-dark .qtip-titlebar .ui-state-hover { border-color: rgb(48, 48, 48); }
+.qtip-cream { background-color: rgb(251, 247, 170); border-color: rgb(249, 233, 142); color: rgb(162, 125, 53); }
+.qtip-cream .qtip-titlebar { background-color: rgb(240, 222, 125); }
+.qtip-cream .qtip-close .qtip-icon { background-position: -82px 0px; }
+.qtip-red { background-color: rgb(247, 139, 131); border-color: rgb(217, 82, 82); color: rgb(145, 35, 35); }
+.qtip-red .qtip-titlebar { background-color: rgb(240, 109, 101); }
+.qtip-red .qtip-close .qtip-icon { background-position: -102px 0px; }
+.qtip-red .qtip-icon { border-color: rgb(217, 82, 82); }
+.qtip-red .qtip-titlebar .ui-state-hover { border-color: rgb(217, 82, 82); }
+.qtip-green { background-color: rgb(202, 237, 158); border-color: rgb(144, 217, 63); color: rgb(63, 98, 25); }
+.qtip-green .qtip-titlebar { background-color: rgb(176, 222, 120); }
+.qtip-green .qtip-close .qtip-icon { background-position: -42px 0px; }
+.qtip-blue { background-color: rgb(229, 246, 254); border-color: rgb(173, 217, 237); color: rgb(94, 153, 189); }
+.qtip-blue .qtip-titlebar { background-color: rgb(208, 233, 245); }
+.qtip-blue .qtip-close .qtip-icon { background-position: -2px 0px; }
+.qtip-shadow { box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 3px 1px; }
+.qtip-rounded, .qtip-tipsy, .qtip-bootstrap { border-radius: 5px; }
+.qtip-youtube { border-radius: 2px; box-shadow: rgb(51, 51, 51) 0px 0px 3px; color: rgb(255, 255, 255); border-width: 0px; background: -webkit-linear-gradient(top, rgb(74, 74, 74) 0px, black 100%) rgb(74, 74, 74); }
+.qtip-youtube .qtip-titlebar { background-color: rgba(0, 0, 0, 0); }
+.qtip-youtube .qtip-content { padding: 0.75em; font: 12px arial, sans-serif; }
+.qtip-youtube .qtip-icon { border-color: rgb(34, 34, 34); }
+.qtip-youtube .qtip-titlebar .ui-state-hover { border-color: rgb(48, 48, 48); }
+.qtip-jtools { background: -webkit-linear-gradient(top, rgb(113, 113, 113), rgb(35, 35, 35)) rgba(0, 0, 0, 0.7); border: 2px solid rgb(241, 241, 241); border-radius: 2px; box-shadow: rgb(51, 51, 51) 0px 0px 12px; }
+.qtip-jtools .qtip-titlebar { background-color: transparent; }
+.qtip-jtools .qtip-content { }
+.qtip-jtools .qtip-titlebar, .qtip-jtools .qtip-content { background: transparent; color: rgb(255, 255, 255); border: 0px dashed transparent; }
+.qtip-jtools .qtip-icon { border-color: rgb(85, 85, 85); }
+.qtip-jtools .qtip-titlebar .ui-state-hover { border-color: rgb(51, 51, 51); }
+.qtip-cluetip { box-shadow: rgba(0, 0, 0, 0.4) 4px 4px 5px; background-color: rgb(217, 217, 194); color: rgb(17, 17, 17); border: 0px dashed transparent; }
+.qtip-cluetip .qtip-titlebar { background-color: rgb(135, 135, 106); color: rgb(255, 255, 255); border: 0px dashed transparent; }
+.qtip-cluetip .qtip-icon { border-color: rgb(128, 128, 100); }
+.qtip-cluetip .qtip-titlebar .ui-state-hover { border-color: rgb(105, 105, 82); color: rgb(105, 105, 82); }
+.qtip-tipsy { background: rgba(0, 0, 0, 0.87); color: rgb(255, 255, 255); border: 0px solid transparent; font-size: 11px; font-family: "Lucida Grande", sans-serif; font-weight: 700; line-height: 16px; text-shadow: black 0px 1px; }
+.qtip-tipsy .qtip-titlebar { background-color: transparent; }
+.qtip-tipsy .qtip-content { }
+.qtip-tipsy .qtip-icon { border-color: rgb(34, 34, 34); text-shadow: none; }
+.qtip-tipsy .qtip-titlebar .ui-state-hover { border-color: rgb(48, 48, 48); }
+.qtip-tipped { border: 3px solid rgb(149, 159, 169); border-radius: 3px; background-color: rgb(249, 249, 249); color: rgb(69, 69, 69); font-weight: 400; font-family: serif; }
+.qtip-tipped .qtip-titlebar { border-bottom-width: 0px; color: rgb(255, 255, 255); background: -webkit-linear-gradient(top, rgb(58, 121, 184), rgb(46, 98, 157)) rgb(58, 121, 184); }
+.qtip-tipped .qtip-icon { border: 2px solid rgb(40, 85, 137); background: rgb(40, 85, 137); }
+.qtip-tipped .qtip-icon .ui-icon { background-color: rgb(251, 251, 251); color: rgb(85, 85, 85); }
+.qtip-bootstrap { font-size: 14px; line-height: 20px; color: rgb(51, 51, 51); padding: 1px; background-color: rgb(255, 255, 255); border: 1px solid rgba(0, 0, 0, 0.2); border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px; background-clip: padding-box; }
+.qtip-bootstrap .qtip-titlebar { padding: 8px 14px; margin: 0px; font-size: 14px; font-weight: 400; line-height: 18px; background-color: rgb(247, 247, 247); border-bottom: 1px solid rgb(235, 235, 235); border-radius: 5px 5px 0px 0px; }
+.qtip-bootstrap .qtip-titlebar .qtip-close { right: 11px; top: 45%; border-style: none; }
+.qtip-bootstrap .qtip-content { padding: 9px 14px; }
+.qtip-bootstrap .qtip-icon { background: transparent; }
+.qtip-bootstrap .qtip-icon .ui-icon { width: auto; height: auto; float: right; font-size: 20px; font-weight: 700; line-height: 18px; color: rgb(0, 0, 0); text-shadow: rgb(255, 255, 255) 0px 1px 0px; opacity: 0.2; }
+.qtip-bootstrap .qtip-icon .ui-icon:hover { color: rgb(0, 0, 0); text-decoration: none; cursor: pointer; opacity: 0.4; }
+.qtip:not(.ie9haxors) div.qtip-content, .qtip:not(.ie9haxors) div.qtip-titlebar { filter: none; }
+.qtip .qtip-tip { margin: 0px auto; overflow: hidden; z-index: 10; }
+.qtip .qtip-tip, .qtip .qtip-tip .qtip-vml { position: absolute; color: rgb(18, 52, 86); background: transparent; border: 0px dashed transparent; }
+.qtip .qtip-tip canvas { top: 0px; left: 0px; }
+.qtip .qtip-tip .qtip-vml { display: inline-block; visibility: visible; }
+#qtip-overlay { position: fixed; left: -10000em; top: -10000em; }
+#qtip-overlay.blurs { cursor: pointer; }
+#qtip-overlay div { position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background-color: rgb(0, 0, 0); opacity: 0.7; }
+.qtipmodal-ie6fix { position: absolute !important; }
+
+/* StyleSheet 3: http://office.anyfive.com/resources/abc/css/lang/abc-lang.css?version=20251030 */
+.new_wrap .new_layMain .layContainer section.abc-content .wgBx.wg_task .wgContents td.note_name .abcUsr { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; width: 75px; }
+#printNoneArea .tabConts_headerLine #print_button { margin-top: -7px; }
+.new_wrap .new_layMain .layContainer .menuTop_list .count { top: 1px !important; right: -2px !important; padding: 0px 3px 1px !important; border-radius: 6px !important; }
+#jnlInfoEditEntity .comnContentBx #editorArea { z-index: 0 !important; }
+:lang(en) #cmnBlindBx { height: auto; }
+:lang(en) .new_wrap .new_layMain .layContainer .k-tabstrip .k-tabstrip-items { margin-left: 0px !important; margin-right: 0px !important; }
+:lang(en) .new_wrap .new_layMain .layContainer .tabStrip.typeAdmin .k-tabstrip-items .k-item { padding: 0px 5px; }
+:lang(en) .new_wrap .new_layMain .layContainer #tabStrip_servMai.tabStrip.typeAdmin .k-tabstrip-items .k-item { padding: 0px; }
+:lang(en) .new_wrap .new_layMain .layContainer .tabStrip.typeAdmin .k-tabstrip-items .k-item .k-link { text-overflow: ellipsis; overflow: hidden; }
+:lang(en) .new_wrap .new_layMain .layContainer .tabStrip.typeAdmin .k-content .comnContentBx > .tbl_trcolgroupcol:first-child { width: auto !important; }
+:lang(en) .new_wrap .noti_wrap.personal_info .linked_box li { align-items: center; }
+:lang(en) .new_wrap div.wg_newspeed.newspeed .newspdMenu nav a { text-overflow: ellipsis; }
+:lang(en) .new_wrap .new_layMain .layContainer section.abc-content .wgContents li#card-buttons.btn .checkBtn { padding: 0px 3px; letter-spacing: -0.3px; width: auto !important; }
+:lang(en) .new_wrap #layContainer .tbl_none-titInfo td .filesArea .fileLinkTxt b { padding-right: 3px; }
+:lang(en) .new_wrap .new_layMain .layContainer section.abc-content .wgBx.wg_poto .wgContents { border-top: inherit !important; }
+:lang(en) .new_wrap .new_layMain .layContainer section.abc-content .wgWeather .wgBx.weatherFront .weather_setting { width: auto; right: 130px; }
+:lang(en) .new_wrap .new_layMain .layContainer section.abc-content .wgWeather .wgBx.weatherFront .fcst { width: auto; right: 20px; }
+:lang(en) .new_wrap .new_layMain .layContainer section.abc-content .wgWeather .wgBx.weatherFront .weather_info #pop { left: 160px; width: 46%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+:lang(en) .new_wrap .new_layMain .layContainer section.abc-content .wgWeather .wgBx.weatherFront .weather_info strong #calculatedTemperature { left: 160px; width: 45%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; padding-right: 20px; }
+:lang(en) .new_wrap .new_layMain .layContainer section.abc-content .wgBx.wg_profile .profileInfo .txt .h2 + p { width: 100%; overflow: hidden; text-overflow: ellipsis; display: block; white-space: nowrap; }
+:lang(en) .new_wrap .new_layMain .layContainer section.abc-content .wgBx.wg_profile .profileInfo .txt { padding: 0px 0px 0px 122px; }
+:lang(en) .new_wrap .new_layMain .layContainer section.abc-content .wgWeather .wgBottom.next_weather #dayAfterTomorrowWeather { min-width: 80%; white-space: nowrap; padding: 0px 20px; overflow: hidden; text-overflow: ellipsis; display: block; }
+:lang(en) .new_wrap .new_layMain .layContainer section.abc-content .wgBx.wg_profile .profileInfo .txt p:last-child { padding-left: 15px; }
+:lang(en) .new_wrap .new_layMain .layContainer section.abc-content .wgBx.wg_profile .profileInfo .txt p:last-child time { white-space: nowrap; margin-left: 0px; }
+:lang(en) .new_wrap .new_layMain .layContainer section.abc-content .wgTop .txt { width: 85%; }
+:lang(en) .new_wrap div.wg_newspeed.newspeed .story_body li.name { position: relative; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding-right: 60px; display: block; }
+:lang(en) .new_wrap div.wg_newspeed.newspeed .story_body li span.date_time { position: absolute; right: 0px; }
+:lang(en) .new_wrap div.wg_newspeed.newspeed .story_body li.text > div:first-child { margin-right: 10px !important; }
+:lang(en) .new_wrap div.wg_newspeed.newspeed .story_body li.text > div:last-child { margin-left: 0px !important; }
+:lang(en) .new_wrap div.wg_newspeed.newspeed .storyPost .story_body li.text p { margin-left: 0px !important; }
+:lang(en) .new_wrap .new_aside_wrap .menu_list li a { line-height: 40px; }
+:lang(en) .new_wrap .new_aside_wrap .menu_list li a span { line-height: normal !important; }
+:lang(en) .new_wrap .new_layMain .laySubMenu.laySubMenu_adr .subMenuPanelArea .k-state-default .k-link { overflow: hidden !important; }
+:lang(en) .new_wrap .new_layMain .laySubMenu .k-panelbar > li.k-state-default > .k-link { padding-right: 56px; letter-spacing: -0.5px; overflow: hidden !important; }
+:lang(en) .new_wrap .new_layMain .laySubMenu .subMenulist li span.menu_text { white-space: nowrap; text-overflow: ellipsis; overflow: hidden; max-width: 70%; position: relative; line-height: 1.4; display: inline-block; margin-top: 10px; letter-spacing: -0.5px; }
+:lang(en) .new_wrap .new_layMain .laySubMenu.laySubMenu_apr .subMenuPanelArea .panelBar .k-state-default .lblCabinet .k-state-default .k-link { width: 100%; padding-right: 35px; }
+:lang(en) .new_wrap .new_layMain .laySubMenu.laySubMenu_apr .subMenuPanelArea .panelBar .k-state-default .k-link.k-header:hover { letter-spacing: -0.2px; }
+:lang(en) .new_wrap .new_layMain .laySubMenu .subMenuPanelArea .business_panel .k-link .ellipsis { max-width: 90% !important; letter-spacing: -0.5px; }
+:lang(en) .new_wrap #layContainer .tbl_none-titInfo td .inputFieldArea { display: flex; }
+:lang(en) .new_wrap #layContainer .tbl_none-titInfo td div.orgautocomplete-wrap { width: calc(100% - 110px) !important; }
+:lang(en) .new_wrap #layContainer .tbl_none-titInfo td div.orgautocomplete-wrap + .k-button { white-space: nowrap; width: auto !important; }
+:lang(en) .new_wrap #layContainer .tbl_none-titInfo td .inputFieldArea .k-button { width: auto !important; }
+:lang(en) .myRightPopArea.custom-embedded-form .myRightPopContentOutBx .nomalbtn { white-space: nowrap; }
+:lang(en) .k-window .k-window-titlebar #lastEmailWindow_wnd_title { letter-spacing: -0.5px; }
+:lang(en) .new_wrap .new_layMain .layContainer #abc-content .k-content .k-grid table td .approved, :lang(en) .new_wrap .new_layMain .layContainer #abc-content .k-content .k-grid table td .unapproved, :lang(en) .new_wrap .new_layMain .layContainer #abc-content .k-content .k-grid table td .approve_hold, :lang(en) .new_wrap .new_layMain .layContainer #abc-content .k-content .k-grid table td .unapproved_return { width: auto; }
+:lang(en) .new_wrap .new_layMain .layContainer #abc-content .k-content .k-grid table td .approve_ing { width: auto; min-width: 50px; }
+:lang(en) .new_wrap .new_layMain .layContainer #brdTabStrip-1 .tbl_none-titInfo td .approved, :lang(en) .new_wrap .new_layMain .layContainer #brdTabStrip-1 .tbl_none-titInfo td .approve_ing, :lang(en) .new_wrap .new_layMain .layContainer #brdTabStrip-1 .tbl_none-titInfo td .unapproved, :lang(en) .new_wrap .new_layMain .layContainer #brdTabStrip-1 .tbl_none-titInfo td .approve_hold, :lang(en) .new_wrap .new_layMain .layContainer #brdTabStrip-1 .tbl_none-titInfo td .unapproved_return { width: auto; }
+:lang(en) .new_wrap .layMain.sub #layContainer #tabStrip_eqm #reservationForm .tbl_none-titInfo td .attendance_name.inputFieldArea .k-autocomplete { float: none; width: inherit; }
+:lang(en) .new_wrap .layMain.sub #layContainer #tabStrip_eqm #reservationForm .tbl_none-titInfo td .attendance_name.inputFieldArea #organWindowBtn { padding: 0px 10px; width: auto !important; }
+:lang(en) .new_wrap .new_layMain .laySubMenu .subMenulist li .btn_check { letter-spacing: -1px; }
+:lang(en) .new_wrap .new_layMain .layContainer #abc-content .k-content .tabConts .F_11_gray { letter-spacing: 0px; }
+:lang(en) .win_organ div.win_leftBx .win_organ_search_txt { width: calc(100% - 68px) !important; }
+:lang(en) .new_wrap #layContainer .tbl_none-titInfo td .filesArea .fileLinkTxt b { padding-right: 3px; }
+:lang(en) #agreeCheck, :lang(en) #agreeUseCheck { margin-right: 3px; }
+:lang(en) #layAddSchedulePopup #schEdit .tbl_none-titInfo td .inputFieldArea { flex-flow: wrap; }
+:lang(en) #layAddSchedulePopup #schEdit .tbl_none-titInfo td .inputFieldArea .k-autocomplete { width: calc(100% - 232px) !important; }
+:lang(en) #monthly #monthly_header .bg_dayname { width: 14.285%; }
+:lang(en) .new_wrap #layContainer .tbl_thT_tdC td { word-break: break-word; }
+:lang(en) .new_wrap #layContainer .comnContentBx .tbl_none-titInfo th { white-space: nowrap; }
+:lang(en) div.k-window .k-grid table tbody tr td.grdTit { display: table-cell !important; }
+:lang(en) .win_organ div.win_leftBx .win_organ_search_btn { width: auto !important; }
+:lang(en) .new_wrap .new_layMain .laySubMenu.laySubMenu_cw ul.subMenuMailInfo_m a { text-overflow: ellipsis; overflow: hidden; }
+:lang(en) .myRightPopArea.custom-embedded-form .myRightPopContentOutBx .tbl_none-titInfo td div.orgautocomplete-wrap { width: calc(100% - 110px) !important; }
+:lang(en) .myRightPopArea.custom-embedded-form .myRightPopContentOutBx .tbl_none-titInfo td div.orgautocomplete-wrap + .k-button { width: auto !important; }
+:lang(en) .myRightPopArea.custom-embedded-form .myRightPopContentOutBx .tbl_none-titInfo td .filesArea .fileLinkTxt b { margin-right: 3px; }
+:lang(en) .new_wrap .tbl_none-titInfo td #editorArea { z-index: 999; }
+:lang(en) .k-window #aprDocEdit_window_line .apprLine_leftBx .k-tabstrip .k-tabstrip-items li .k-link { padding: 0.5em 0.52em; }
+:lang(en) .k-window #aprDocEdit_window_line .apprLine_leftBx, :lang(en) .k-window #aprDocEdit_window_line div.win_bottomBx { left: 20px; width: 360px; }
+:lang(en) .k-window #aprDocEdit_window_line div.win_bottomBx > span { letter-spacing: -0.5px; font-size: 9px !important; }
+:lang(en) .k-window #aprDocEdit_window_line .apprLine_rightTopBx, :lang(en) .k-window #aprDocEdit_window_line .apprLine_rightBx { width: 585px; }
+:lang(en) .k-window #aprDocEdit_window_line div.apprLine_btnBx { width: 675px; margin-left: 310px; }
+:lang(en) .k-window #aprDocEdit_window_line div.apprLine_btnBx div#approvalLineArea .k-textbox { width: 220px !important; }
+:lang(en) .k-window #aprDocEdit_window_line .apprLine_leftBx .k-tabstrip .k-content.k-state-active { padding-right: 0px; }
+:lang(en) .k-window #tabConts_apprline_search { width: 340px; }
+:lang(en) .k-window #tabConts_apprline_search #win_apprline_search_txt { width: 270px; }
+:lang(en) .k-window #tabConts_apprline_search #win_apprline_search_txt + .win_apprline_search_btn { width: auto !important; }
+:lang(en) .mailWrite td.inputbox .nomalbtn.adr, :lang(en) .mailWrite td.inputbox .nomalbtn.org { width: auto !important; }
+:lang(en) .new_wrap #layContainer .datatable_01 td span.onTxt, .new_wrap #layContainer .datatable_01 td span.mailsendBtn { white-space: nowrap; }
+:lang(en) .myRightPopArea.custom-embedded-form .myRightPopContentOutBx .thStyle_theme .filesArea .addfileSize { margin: 30px 0px 0px; }
+:lang(en) #p_wrapper .menu #outline { width: 55px !important; }
+:lang(en) #btn_atchDoc { width: auto !important; }
+:lang(en) .new_wrap .new_layMain .layContainer .k-content .comnContentBx .comentWrap._write .coment_body ._compbtn .mailsendBtn.floatR { width: auto; }
+:lang(en) .new_wrap #fmAdrImExport .importBx .btnFileBx #btnXlsFormDown { width: auto !important; padding: 0px 5px !important; }
+:lang(en) .new_wrap #fmAdrImExport .exportBx .tbl_set td .mailsendBtn { white-space: nowrap; }
+:lang(en) .new_wrap .new_layMain label { margin-right: 0px; }
+:lang(en) .k-window .k-window-titlebar #detailFormWindow_wnd_title { padding-top: 25px; }
+:lang(en) div.k-window div.k-window-content .mwcontantWrap .tbl_none-titInfo-div { margin-bottom: 10px; }
+:lang(en) .layerpopup .group_wrap button { width: auto; }
+:lang(en) .layerpopup .group_wrap input { width: 220px; }
+:lang(en) .new_wrap .new_layMain .laySubMenu.laySubMenu_cnfgUsr .subMenuPanelArea .k-state-default .k-panel li .k-link { white-space: nowrap; letter-spacing: -0.25px; }
+:lang(en) #sieveWindow #entity_sieve .tbl.tb_bgNo td > span + input { width: 140px; }
+:lang(en) #forwardWindow .tbl_thL_tdL .forward_option label span { width: auto !important; }
+:lang(en) #header .menu { width: 640px !important; }
+:lang(en) #p_wrapper #header .menu li { white-space: nowrap; }
+:lang(en) #p_wrapper #header .menu li:nth-child(1) { width: 60px !important; }
+:lang(en) #p_wrapper #header .menu li:nth-child(2) { width: 80px !important; }
+:lang(en) #p_wrapper #header .menu li:nth-child(3) { width: 105px !important; }
+:lang(en) #p_wrapper #header .menu li:nth-child(4) { width: 110px !important; }
+:lang(en) #p_wrapper #header .menu li:nth-child(5) { width: 95px !important; }
+:lang(en) #p_wrapper #header .menu li:nth-child(6) { width: 180px !important; }
+:lang(en) #p_wrapper #header .menu li:nth-child(7) { width: 55px !important; }
+:lang(en) #p_wrapper #header .menu li:nth-child(8) { width: 105px !important; }
+:lang(en) #p_wrapper #header .menu li:nth-child(9) { width: 90px !important; }
+:lang(en) #p_wrapper #header .menu li:nth-child(10) { width: 135px !important; }
+:lang(en) .table01 th { overflow: hidden; text-overflow: ellipsis; }
+:lang(en) #header .btn a.print { width: auto; min-width: 40px; }
+:lang(en) .new_wrap_admin .layContent .layContainer .tabConts_headerBx .work_trpBtn button { width: auto; }
+:lang(en) .new_wrap_admin .layContent .layContainer .tbl_thL_tdL td .inputFieldArea { display: flex; justify-content: space-between; align-items: flex-start; }
+:lang(en) .new_wrap_admin .layContent .layContainer .tbl_thL_tdL .k-textbox.orgautocomplete-wrap { width: 87.8% !important; }
+:lang(en) .new_wrap_admin .k-button { white-space: nowrap; }
+:lang(en) .new_wrap_admin #fmAdrImExport .importBx .btnFileBx .k-upload { left: 165px; }
+:lang(en) .importBx .btnFileBx #btnXlsFormDown, :lang(en) .new_wrap_admin .k-button { width: auto; white-space: nowrap; }
+:lang(en) .new_wrap_admin #fmAdrImExport .exportBx .tbl_set tr:last-child td:first-child { padding-right: 5px; }
+:lang(en) .datatable_01 td:first-child, .datatable_01 thead th:first-child { overflow: hidden; }
+:lang(en) .new_wrap_admin .layContainer .datatable_01 td { padding: 10px 5px; }
+
+/* StyleSheet 4: inline */
+.cke { visibility: hidden; }
+
+/* StyleSheet 5: inline */
+font { font-size: 10pt; }
+body, td, select, input, div, form, textarea, center, option, pre { font-family: 굴림; font-size: 12px; line-height: 120%; word-break: break-all; }
+blockquote, td, br { font-family: 굴림; font-size: 12px; line-height: 120%; }
+img { border: 0px; }
+a:link { color: rgb(93, 93, 93); text-decoration: none; }
+p { margin-top: 2px; margin-bottom: 2px; color: black; line-height: normal; }
+
+/* Inline Style 0 */
+.cke{visibility:hidden;}
+
+/* Inline Style 1 */
+FONT{font-size:10pt} body,td,select,input,div,form,textarea,center,option,pre {font-family:'굴림'; font-size:12px; line-height:120%; word-break:break-all;} blockquote,td,br {font-family:'굴림'; font-size:12px; line-height:120%;} img {border:0} A:link {color:#5D5D5D;text-decoration:none}; A:visited {color:#5D5D5D;text-decoration:none}; A:active {color:#5D5D5D;text-decoration:none}; A:hover {color:#0089EC;text-decoration:underline} P {margin-top:2px;margin-bottom:2px; color:black; line-height:normal; }
+
+    </style>
+</head>
+<body>
+<div class="content" style="border: 1px solid rgb(255, 255, 255);">
+					<h2 style="display: block;"><span>법인카드 사용내역 정산 보고</span></h2>
+					<p class="company" style="display: block;">(주)애니파이브</p>
+					<p class="team" style="display: block;">ANY-경비- 0055</p>
+					<div class="clear"></div>
+	
+					<div id="apprLineArea">
+						<!-- 기안부서 영역 -->
+						<div class="table01_box" style="display: block;">
+							<table cellspacing="0" class="table01" summary="기안부서 내용">
+								<caption>기안부서</caption>  
+								<colgroup>
+									<col width="60">
+									<col width="140">
+									<col span="8" width="*">
+								</colgroup>
+								<tbody><tr>
+									<th scope="row" class="boeder_bnone">기안부서</th>  
+									<td class="boeder_top">
+										<div class="bg01">
+											IPR솔루션팀
+										</div>
+									</td>
+									
+									
+										
+											
+											<th class="boeder_left" scope="col">과장</th>
+										
+									
+										
+									
+										
+											
+											<th class="boeder_left" scope="col">이사</th>
+										
+									
+										
+											
+											<th class="boeder_left" scope="col">이사</th>
+										
+									
+										
+											
+											<th class="boeder_left" scope="col">대표이사</th>
+										
+									
+									
+									
+										<th class="boeder_left" scope="col">&nbsp;</th>
+									
+										<th class="boeder_left" scope="col">&nbsp;</th>
+									
+										<th class="boeder_left" scope="col">&nbsp;</th>
+									
+										<th class="boeder_left" scope="col">&nbsp;</th>
+									
+								</tr>
+								<tr>
+									<th scope="row" class="boeder_bnone">기안일</th>  
+									<td style="letter-spacing: 0.01em;"> 
+										<div class="bg01">2010-05-27 14:57:52</div>
+									</td>
+									
+									
+										
+										
+											
+										
+										
+											
+											<td rowspan="3" class="boeder_left">
+												<div class="bg02">
+													<div class="text">
+														<ul>
+															<li>편영수</li>
+															<li>
+																
+																	
+																	<span class="red ">
+																		기안  
+																	</span>
+																
+															</li>
+															<li>
+																
+																	
+																		05/27
+																	
+																	
+																
+															</li>
+															
+														</ul>
+													</div>
+													<div class="sign">
+														
+													</div>
+												</div>
+											</td>
+										
+									
+										
+										
+											
+										
+										
+									
+										
+										
+											
+										
+										
+											
+											<td rowspan="3" class="boeder_left">
+												<div class="bg02">
+													<div class="text">
+														<ul>
+															<li>김기두</li>
+															<li>
+																
+																	
+																	<span class="red ">
+																		승인  
+																	</span>
+																
+															</li>
+															<li>
+																
+																	
+																		06/03
+																	
+																	
+																
+															</li>
+															
+														</ul>
+													</div>
+													<div class="sign">
+														
+													</div>
+												</div>
+											</td>
+										
+									
+										
+										
+											
+										
+										
+											
+											<td rowspan="3" class="boeder_left">
+												<div class="bg02">
+													<div class="text">
+														<ul>
+															<li>김성수</li>
+															<li>
+																
+																	
+																	<span class="red ">
+																		승인  
+																	</span>
+																
+															</li>
+															<li>
+																
+																	
+																		06/03
+																	
+																	
+																
+															</li>
+															
+														</ul>
+													</div>
+													<div class="sign">
+														
+													</div>
+												</div>
+											</td>
+										
+									
+										
+										
+											
+										
+										
+											
+											<td rowspan="3" class="boeder_left">
+												<div class="bg02">
+													<div class="text">
+														<ul>
+															<li>CEO</li>
+															<li>
+																
+																	
+																	<span class="red ">
+																		승인  
+																	</span>
+																
+															</li>
+															<li>
+																
+																	
+																		06/03
+																	
+																	
+																
+															</li>
+															
+														</ul>
+													</div>
+													<div class="sign">
+														
+													</div>
+												</div>
+											</td>
+										
+									
+									
+									
+										<td rowspan="3" class="boeder_left">&nbsp;</td>
+									
+										<td rowspan="3" class="boeder_left">&nbsp;</td>
+									
+										<td rowspan="3" class="boeder_left">&nbsp;</td>
+									
+										<td rowspan="3" class="boeder_left">&nbsp;</td>
+									
+								</tr>
+								<tr>
+									<th scope="row" class="boeder_bnone">기안자</th>  
+									<td>
+										<div class="bg01">
+											편영수
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">보존연한</th>  
+									<td>
+										<div class="bg01">
+											
+											
+												
+												
+												
+													 
+														3년<!-- 년 -->
+													
+												
+											
+											<!-- 월 -->
+										</div>
+									</td>
+								</tr>
+							</tbody></table>
+						</div>
+	
+						<!-- 합의부서/수신부서 영역 -->
+						<div class="table01_box" id="apprAgree" style="display: block;">
+							<table cellspacing="0" class="table01" summary="합의부서/수신부서 내용">
+								<caption>합의부서/수신부서</caption>
+								<colgroup>
+									<col width="200">
+									<col span="8" width="*">
+								</colgroup>
+								<tbody><tr>
+									<th class="boeder_bnone" scope="col">합의부서/수신부서</th>
+									
+									
+										
+									
+										
+											
+											<th class="boeder_left" scope="col">대리</th>
+										
+									
+										
+									
+										
+									
+										
+									
+									
+									
+										<th class="boeder_left" scope="col">&nbsp;</th>
+									
+										<th class="boeder_left" scope="col">&nbsp;</th>
+									
+										<th class="boeder_left" scope="col">&nbsp;</th>
+									
+										<th class="boeder_left" scope="col">&nbsp;</th>
+									
+										<th class="boeder_left" scope="col">&nbsp;</th>
+									
+										<th class="boeder_left" scope="col">&nbsp;</th>
+									
+										<th class="boeder_left" scope="col">&nbsp;</th>
+									
+								</tr>
+								<tr>
+									<td class="bgw" style="height:77px;">
+										
+										
+										
+											
+											
+										
+											
+												
+											
+											
+										
+											
+											
+										
+											
+											
+										
+											
+											
+										
+										
+											솔루션사업팀
+										
+										 / 
+										
+									</td>
+									
+									
+									
+										
+										
+											
+										
+										
+									
+										
+										
+											
+										
+										
+											
+											<td class="boeder_left">
+												<div class="bg02">
+													<div class="text">
+														<ul>
+															<li>정주연</li>
+															<li>
+																
+																	
+																	
+																	<span class="red ">
+																		합의  
+																	</span>
+																
+															</li>
+															<li>
+																
+																	
+																		05/31
+																	
+																	
+																
+															</li>
+															
+														</ul>
+													</div>
+													<div class="sign">
+														
+													</div>
+												</div>
+											</td>
+										
+									
+										
+										
+											
+										
+										
+									
+										
+										
+											
+										
+										
+									
+										
+										
+											
+										
+										
+									
+									
+									
+										<td class="boeder_left">&nbsp;</td>
+									
+										<td class="boeder_left">&nbsp;</td>
+									
+										<td class="boeder_left">&nbsp;</td>
+									
+										<td class="boeder_left">&nbsp;</td>
+									
+										<td class="boeder_left">&nbsp;</td>
+									
+										<td class="boeder_left">&nbsp;</td>
+									
+										<td class="boeder_left">&nbsp;</td>
+									
+								</tr>
+							</tbody></table>
+						</div>
+					</div>
+	
+					<!-- 참조,제목 영역 -->
+					<div class="table02_box" style="display: block;">
+						<table cellspacing="0" class="table03" summary="참조,제목">
+							<caption>참조,제목</caption>
+							<colgroup>
+								<col width="100">
+								<col width="*">
+							</colgroup>
+							<tbody><tr>
+								<th scope="row">참조</th>  
+								<td>
+									
+								</td>
+							</tr>
+							<tr id="hitPwrListTr" style="display: none;">
+								<th scope="row">조회</th>  
+								<td>
+									
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">제목</th>  
+								<td>법인카드 사용내역 정산 보고_5월_편영수K							</td>
+							</tr>
+						</tbody></table>
+					</div>
+	
+					<!-- 내용 영역 -->
+					<!-- 
+					<div class="content_box dispNone">
+						<div id="tempApprDocContent" style="padding:10px;"></div>
+					</div>
+					 -->
+					<div id="apprDocContent" class="content_box" style="border: 1px solid rgb(0, 0, 0);">
+						<div id="content" style="padding:10px;">
+
+<meta http-equiv="Content-Type" content="text/html; charset=ks_c_5601-1987">
+<style>FONT{font-size:10pt} body,td,select,input,div,form,textarea,center,option,pre {font-family:'굴림'; font-size:12px; line-height:120%; word-break:break-all;} blockquote,td,br {font-family:'굴림'; font-size:12px; line-height:120%;} img {border:0} A:link {color:#5D5D5D;text-decoration:none}; A:visited {color:#5D5D5D;text-decoration:none}; A:active {color:#5D5D5D;text-decoration:none}; A:hover {color:#0089EC;text-decoration:underline} P {margin-top:2px;margin-bottom:2px; color:black; line-height:normal; }</style>
+
+<meta content="TAGFREE Active Designer v3.0" name="GENERATOR">
+
+
+<p style="FONT-SIZE: 9pt; FONT-FAMILY: gulim">
+</p><table style="WIDTH: 813pt; BORDER-COLLAPSE: collapse; mso-displayed-decimal-separator: '.'; mso-displayed-thousand-separator: ','" cellspacing="0" cellpadding="0" width="1083" border="0" x:str=""><!--StartFragment-->
+<colgroup>
+<col style="WIDTH: 85pt; mso-width-source: auto; mso-width-alt: 3214; mso-ruby-visibility: none" width="113">
+<col style="WIDTH: 84pt; mso-width-source: auto; mso-width-alt: 3185; mso-ruby-visibility: none" width="112">
+<col style="WIDTH: 90pt; mso-width-source: auto; mso-width-alt: 3413; mso-ruby-visibility: none" width="120">
+<col style="WIDTH: 71pt; mso-width-source: auto; mso-width-alt: 2673; mso-ruby-visibility: none" width="94">
+<col style="WIDTH: 68pt; mso-width-source: auto; mso-width-alt: 2588; mso-ruby-visibility: none" width="91">
+<col style="WIDTH: 152pt; mso-width-source: auto; mso-width-alt: 5745; mso-ruby-visibility: none" width="202">
+<col style="WIDTH: 60pt; mso-width-source: auto; mso-ruby-visibility: none" span="2" width="80">
+<col style="WIDTH: 80pt; mso-width-source: auto; mso-width-alt: 3043; mso-ruby-visibility: none" width="107">
+<col style="WIDTH: 63pt; mso-width-source: auto; mso-width-alt: 2389; mso-ruby-visibility: none" width="84">
+</colgroup><tbody>
+<tr style="HEIGHT: 24.75pt; mso-ruby-visibility: none; mso-height-source: auto" height="33">
+<td class="xl142" style="PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 18pt; VERTICAL-ALIGN: middle; WIDTH: 813pt; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: HY견고딕, serif; WHITE-SPACE: nowrap; HEIGHT: 24.75pt; TEXT-ALIGN: center; TEXT-DECORATION: underline; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0; text-underline-style: single" width="1083" colspan="10" height="33">2010년 5월 CARD 사용내역 정산 보고</td>
+</tr>
+<tr style="HEIGHT: 16.5pt; mso-ruby-visibility: none; mso-height-source: auto" height="22">
+<td class="xl90" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 16.5pt; TEXT-ALIGN: left; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: colspan; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0" colspan="2" height="22">보고일자: 2010.05.27</td>
+<td class="xl90" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: left; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+</tr>
+<tr style="HEIGHT: 16.5pt; mso-ruby-visibility: none; mso-height-source: auto" height="22">
+<td class="xl99" dir="ltr" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: #ccffff; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1pt solid; COLOR: black; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 16.5pt; TEXT-ALIGN: right; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" height="22">카드사용자</td>
+<td class="xl93" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">솔루션사업부</td>
+<td class="xl94" style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">편영수 과장</td>
+<td class="xl143" style="BORDER-RIGHT: black 0.5pt solid; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: #ccffff; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: right; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" colspan="2" rowspan="2">정산방법</td>
+<td class="xl85" style="BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: colspan; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0" colspan="4">당월 사용내역은 매월 29일까지 그룹웨어에 정산하여 보고</td>
+<td class="xl88" style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+</tr>
+<tr style="HEIGHT: 16.5pt; mso-ruby-visibility: none; mso-height-source: auto" height="22">
+<td class="xl100" dir="ltr" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: #ccffff; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1pt solid; COLOR: black; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 16.5pt; TEXT-ALIGN: right; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" height="22">카드번호</td>
+<td class="xl91" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">4265-8639-8922-0242</td>
+<td class="xl92" style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl98" style="BORDER-TOP-WIDTH: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; COLOR: red; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: colspan; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0" colspan="4">매월 29일 까지 정산되지 않은 카드는 자동으로 사용정지 됨</td>
+<td class="xl89" style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+</tr>
+<tr style="HEIGHT: 16.5pt; mso-ruby-visibility: none; mso-height-source: auto" height="22">
+<td class="xl100" dir="ltr" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: #ccffff; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1pt solid; COLOR: black; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 16.5pt; TEXT-ALIGN: right; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" height="22">카드구분</td>
+<td class="xl97" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: silver; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">법인카드</td>
+<td class="xl92" style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0" x:str="체크카드 ">체크카드<span style="mso-spacerun: yes">&nbsp;</span></td>
+<td class="xl147" style="BORDER-TOP-WIDTH: 0.5pt; BORDER-RIGHT: black 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: #ccffff; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: right; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" colspan="2">예산계정</td>
+<td class="xl84" style="BORDER-TOP-WIDTH: 0.5pt; BORDER-RIGHT: black 1pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: colspan; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0" colspan="5">PJT비용(Pjt Code). 소모품비, 회식비, 복리후생비, 접대비, 교육비,..</td>
+</tr>
+<tr style="HEIGHT: 17.25pt; mso-ruby-visibility: none; mso-height-source: auto" height="23">
+<td class="xl101" dir="ltr" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1pt solid; COLOR: black; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 1pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 17.25pt; TEXT-ALIGN: right; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" height="23">사용기간</td>
+<td class="xl95" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BORDER-LEFT: windowtext 0.5pt solid; BORDER-BOTTOM: windowtext 1pt solid; FONT-FAMILY: 가는각진제목체, serif; TEXT-ALIGN: left; mso-font-charset: 129; mso-number-format: 'yyyy'-'m'-?" x:num="40296">2010-4-28</td>
+<td class="xl96" style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP: 0.5pt; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BORDER-LEFT: windowtext 0.5pt solid; BORDER-BOTTOM: windowtext 1pt solid; FONT-FAMILY: 가는각진제목체, serif; TEXT-ALIGN: left; mso-font-charset: 129; mso-number-format: 'yyyy'-'m'-?" x:num="40325">2010-5-27</td>
+<td class="xl140" style="BORDER-TOP-WIDTH: 0.5pt; BORDER-RIGHT: black 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 1pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: right; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" colspan="2">참석자</td>
+<td class="xl86" style="BORDER-TOP-WIDTH: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 1pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: colspan; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0" colspan="4">회사내부인원과<span style="mso-spacerun: yes">&nbsp; </span>고객을 분리하여 기록함.<span style="mso-spacerun: yes">&nbsp; </span>필요시 2줄로 표기함</td>
+<td class="xl87" style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 1pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+</tr>
+<tr style="HEIGHT: 7.5pt; mso-ruby-visibility: none; mso-height-source: auto" height="10">
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 7.5pt; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0" height="10"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+<td class="xl65" style="PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 13pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0"></td>
+</tr>
+<tr style="HEIGHT: 21pt; mso-ruby-visibility: none; mso-height-source: auto" height="28">
+<td class="xl81" style="BORDER-RIGHT: #ffffcc 0.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: black; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1.5pt solid; COLOR: white; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 21pt; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" height="28">일시</td>
+<td class="xl69" style="BORDER-RIGHT: #ffffcc 0.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: black; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: #ffffcc 0.5pt solid; COLOR: white; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">예산계정</td>
+<td class="xl69" style="BORDER-RIGHT: #ffffcc 0.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: black; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: #ffffcc 0.5pt solid; COLOR: white; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">PJT_Code</td>
+<td class="xl69" style="BORDER-RIGHT: #ffffcc 0.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: black; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: #ffffcc 0.5pt solid; COLOR: white; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">사용금액</td>
+<td class="xl69" style="BORDER-RIGHT: #ffffcc 0.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: black; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: #ffffcc 0.5pt solid; COLOR: white; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">사용자</td>
+<td class="xl69" style="BORDER-RIGHT: #ffffcc 0.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: black; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: #ffffcc 0.5pt solid; COLOR: white; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">장소/거래처</td>
+<td class="xl137" style="BORDER-RIGHT: #ffffcc 0.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: black; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: #ffffcc 0.5pt solid; COLOR: white; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" colspan="3">참 석 자</td>
+<td class="xl70" style="BORDER-RIGHT: windowtext 1.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: black; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: #ffffcc 0.5pt solid; WIDTH: 63pt; COLOR: white; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: normal; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" width="84">Check</td>
+</tr>
+<tr style="HEIGHT: 16.5pt; mso-ruby-visibility: none; mso-height-source: auto" height="22">
+<td class="xl82" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 16.5pt; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0" height="22">2010.04.30</td>
+<td class="xl67" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">시내교통비</td>
+<td class="xl66" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">P2010017AD</td>
+<td class="xl68" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: '#,##0'; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0" align="right" x:num="15480">15,480</td>
+<td class="xl66" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">편영수</td>
+<td class="xl67" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">안양-&gt;자택</td>
+<td class="xl75" style="BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: left; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl76" style="BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: left; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl77" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: left; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl67" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">제일모직 킥오프</td>
+</tr>
+<tr style="HEIGHT: 16.5pt; mso-ruby-visibility: none; mso-height-source: auto" height="22">
+<td class="xl82" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 16.5pt; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0" height="22">2010.05.11</td>
+<td class="xl67" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">시내교통비</td>
+<td class="xl66" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">O2010720ZZ</td>
+<td class="xl68" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: '#,##0'; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0" align="right" x:num="10560">10,560</td>
+<td class="xl66" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">편영수</td>
+<td class="xl67" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">본사-&gt;자택</td>
+<td class="xl75" style="BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: left; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl76" style="BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: left; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl77" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: left; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl67" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">제안서 작업</td>
+</tr>
+<tr style="HEIGHT: 16.5pt; mso-ruby-visibility: none; mso-height-source: auto" height="22">
+<td class="xl82" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 16.5pt; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0" height="22">2010.05.15</td>
+<td class="xl67" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">소모품비</td>
+<td class="xl66" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">O2010720ZZ</td>
+<td class="xl68" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: '#,##0'; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0" align="right" x:num="390989">390,989</td>
+<td class="xl66" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">편영수</td>
+<td class="xl67" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">KINKOS</td>
+<td class="xl75" style="BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: left; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl76" style="BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: left; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl77" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: left; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl67" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">제안서 인쇄</td>
+</tr>
+<tr style="HEIGHT: 16.5pt; mso-ruby-visibility: none; mso-height-source: auto" height="22">
+<td class="xl82" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 16.5pt; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0" height="22">2010.05.26</td>
+<td class="xl67" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">소모품비</td>
+<td class="xl66" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">O2010720ZZ</td>
+<td class="xl68" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: '#,##0'; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0" align="right" x:num="62280">62,280</td>
+<td class="xl66" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">편영수</td>
+<td class="xl67" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">KINKOS</td>
+<td class="xl75" style="BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: left; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl76" style="BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: left; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl77" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: left; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl67" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: 0.5pt; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BORDER-BOTTOM-WIDTH: 0.5pt; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto; mso-protection: locked visible; mso-rotate: 0">제안서 인쇄</td>
+</tr>
+<tr style="HEIGHT: 17.25pt; mso-ruby-visibility: none; mso-height-source: auto" height="23">
+<td class="xl134" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 17.25pt; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" height="23">당월합계</td>
+<td class="xl103" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl103" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl104" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: blue; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: '#,##0'; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" align="right" x:num="479309" x:fmla="=SUM(D9:D30)">479,309</td>
+<td class="xl102" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl103" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl105" style="BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl106" style="BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl107" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl108" style="BORDER-RIGHT: windowtext 1.5pt solid; BORDER-TOP: windowtext 1.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+</tr>
+<tr style="HEIGHT: 16.5pt; mso-ruby-visibility: none; mso-height-source: auto" height="22">
+<td class="xl135" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 16.5pt; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" height="22">1월 실적</td>
+<td class="xl110" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: '#,##0'; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl111" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl112" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: '#,##0'; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" align="right" x:num="">0</td>
+<td class="xl109" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl111" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl113" style="BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl114" style="BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl115" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl116" style="BORDER-RIGHT: windowtext 1.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 0.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+</tr>
+<tr style="HEIGHT: 16.5pt; mso-ruby-visibility: none; mso-height-source: auto" height="22">
+<td class="xl136" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 16.5pt; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" height="22">2월 실적</td>
+<td class="xl118" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: '#,##0'; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl119" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl120" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: '#,##0'; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" align="right" x:num="">0</td>
+<td class="xl117" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl119" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl121" style="BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl122" style="BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl123" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl124" style="BORDER-RIGHT: windowtext 1.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+</tr>
+<tr style="HEIGHT: 16.5pt; mso-ruby-visibility: none; mso-height-source: auto" height="22">
+<td class="xl136" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 16.5pt; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" height="22">3월 실적</td>
+<td class="xl118" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: '#,##0'; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl119" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl120" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: '#,##0'; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" align="right" x:num="">0</td>
+<td class="xl117" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl119" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl121" style="BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl122" style="BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl123" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl124" style="BORDER-RIGHT: windowtext 1.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+</tr>
+<tr style="HEIGHT: 16.5pt; mso-ruby-visibility: none; mso-height-source: auto" height="22">
+<td class="xl136" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 16.5pt; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" height="22">4월 실적</td>
+<td class="xl118" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: '#,##0'; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl119" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl120" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: '#,##0'; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" align="right" x:num="35950">35,950</td>
+<td class="xl117" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl119" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl121" style="BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl122" style="BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl123" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl124" style="BORDER-RIGHT: windowtext 1.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #ccffff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+</tr>
+<tr style="HEIGHT: 17.25pt; mso-ruby-visibility: none; mso-height-source: auto" height="23">
+<td class="xl133" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #99ccff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 1pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 1.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; HEIGHT: 17.25pt; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" height="23">누적 합계</td>
+<td class="xl126" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #99ccff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 1.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: '#,##0'; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl127" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #99ccff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 1.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl128" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 700; FONT-SIZE: 12pt; BACKGROUND: #99ccff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 1.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: '#,##0'; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0" align="right" x:num="515259" x:fmla="=SUM(D31:D35)">515,259</td>
+<td class="xl125" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #99ccff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 1.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl127" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #99ccff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 1.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl129" style="BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #99ccff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 1.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl130" style="BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #99ccff; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 1.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl131" style="BORDER-RIGHT: windowtext 0.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #99ccff; VERTICAL-ALIGN: middle; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 1.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-ALIGN: center; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+<td class="xl132" style="BORDER-RIGHT: windowtext 1.5pt solid; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 1px; FONT-WEIGHT: 400; FONT-SIZE: 12pt; BACKGROUND: #99ccff; VERTICAL-ALIGN: middle; BORDER-LEFT: windowtext 0.5pt solid; COLOR: windowtext; PADDING-TOP: 1px; BORDER-BOTTOM: windowtext 1.5pt solid; FONT-STYLE: normal; FONT-FAMILY: 가는각진제목체, serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none; mso-font-charset: 129; mso-ignore: padding; mso-number-format: General; mso-background-source: auto; mso-pattern: auto none; mso-protection: locked visible; mso-rotate: 0">　</td>
+</tr><!--EndFragment-->
+</tbody>
+</table><p></p>
+
+</div>
+					</div>
+	
+					<!-- 첨부파일/참조문서 영역 -->
+					<div id="attachFileArea" class="table05_box" style="display: block;">
+						<table cellspacing="0" class="table04" summary="파일,문서">
+							<caption>파일,문서</caption>
+							<colgroup>
+								<col width="140">
+								<col width="*">
+							</colgroup>
+							<tbody><tr>
+								<th scope="row">첨부파일</th>  
+								<td class="file" id="attachList"><span class="fileIcon file_xls" title="excel"></span><span class="verti_Top"> <a class="F_11_gray" href="/apr/docatchfilemap/download?svr_file_path=apr/20160327/f2099835-737c-4ade-a6d8-210f0e55cdfb">카드사용실적보고(20100527)_편영수K.xls (96.50KB)</a></span><br></td>
+							</tr>
+							<tr>
+								<th scope="row">참조문서</th> 
+								<td class="doc" id="referenceDocList"></td>
+							</tr>
+						</tbody></table>
+					</div>
+	
+					<!-- 결재의견 영역 -->
+					<div class="table04_box" style="display: block;">
+						<table cellspacing="0" class="table04" summary="결재의견" style="word-break: break-all;">  
+							<caption>결재의견</caption>  
+							<colgroup>
+								<col width="140">
+								<col width="*">
+							</colgroup>
+							<tbody><tr>
+								<th scope="row" style="vertical-align:middle;">결재의견</th>  
+								<td>
+									
+										<span class="user">
+											<span class="approvalOpinionCode2">승인</span>
+											<span class="F_12_black_b">
+												CEO/대표이사/대표이사
+											</span>
+											
+											<span class="F_11_gray" style="margin-left:10px;">
+												2010-06-03 21:39:21
+											</span>
+										</span>
+										<br>
+										<div style="padding:0px 0 0 40px;">
+											승인합니다.
+<br>
+<br>정주연대리
+<br>KINKOS&nbsp;건은&nbsp;소모픔비로&nbsp;처리해야&nbsp;합니까&nbsp;?&nbsp;
+<br>다른&nbsp;계정이&nbsp;맞을텐데..
+										</div>
+										<br>
+									
+									
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+					<!-- #1963 [오피스][전자결재] 전자결재 인쇄 버튼 클릭 시 댓글 인쇄 기능 추가 -->
+					<!-- 결재댓글 영역 -->
+ 					<div id="cmtArea" class="table04_box" style="display: none;">
+						<table cellspacing="0" class="table04" summary="결재댓글" style="word-break: break-all;">  
+							<caption>결재댓글</caption>  
+							<colgroup>
+								<col width="140">
+								<col width="*">
+							</colgroup>
+							<tbody><tr>
+								<th scope="row" style="vertical-align:middle;">결재댓글</th>  
+								<td>
+									
+									
+										<span>
+											 결재댓글이 없습니다.  
+										</span>
+									
+								</td>
+							</tr>
+						</tbody></table>
+					</div>	
+				</div>
+</body>
+</html>
