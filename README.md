@@ -372,10 +372,21 @@ DB documents 테이블에서 특정 연도 문서를 조회하여 addDocument �
 **수정 필요:** `#여기를 수정하세요` 주석 부분을 상황에 맞게 변경 (파일 경로 설정)
 
 ### 누락된 문서 확인 & 대처 
-DB와 목록크롤링한 결과를 비교하여 누락된건을 보여줍니다.
 1) any_htmlVer_all/새로운크롤링/해당 기간 내에 있는 문서 ID만 txt파일로 가져오는 파이썬코드.ipynb 
-2) any_htmlVer_all/새로운크롤링/누락된 문서ID 찾기.ipynb
+2) any_htmlVer_all/새로운크롤링/누락된 문서ID 찾기.ipynb (DB와 목록크롤링한 결과를 비교하여 누락된건을 보여줍니다.)
 3) 깃허브 any_crawling을 참고하여 누락된건만 추가적으로 크롤링 후 cmds 만들기
+
+### sourceId로 삭제하는cmds.ipynb
+특정 기간에 생성된 문서들의 삭제 명령어 파일(.cmds)을 생성하는 스크립트입니다.
+- 시작일/종료일 기간 내 생성된 문서의 `source_id` 조회
+- 조회된 문서별 `deleteDocument` 명령어를 `.cmds` 파일로 출력
+- 출력예시
+`delete_commands_2020-01-01_to_2020-10-30.cmds` 파일 생성:
+```
+deleteDocument {"sourceId":"doc_2009491_03"}
+deleteDocument {"sourceId":"doc_2009494_03"}
+deleteDocument {"sourceId":"doc_2009495_03"}
+```
 ---
 
 ## 🛠️ 수동으로 수정해야 할 것들
