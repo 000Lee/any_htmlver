@@ -83,6 +83,7 @@ COLLATE utf8mb4_unicode_ci;
 
 **참고:** 파이썬에서 ChromeDriver는 Selenium이 자동으로 관리하므로 별도 설치 불필요
 
+
 ---
 
 ## 🔧 초기 설정
@@ -204,7 +205,7 @@ any_htmlVer_all/
 │   ├── 숫자제목 파이썬코드 (cmds에서 references 존재하는 문서의 sourceId 숫자 추출)
 │   ├── 참조문서 (AnyFiveReferenceDocCrawler.java) - Java 크롤링 → DB 적재
 │   ├── 결재선 (AnyFiveActiviesCrawler.java) - Java 크롤링 → DB 적재
-│   └── 참조문서를 DB에 적재 (reference_documents 테이블 → documents 테이블의 references로 적용)
+│   └── 참조문서를 DB에 적재.ipynb (reference_documents 테이블 → documents 테이블의 references로 적용)
 │
 ├── 결재의견 동일인물.ipynb
 │   └── HTML 파일에서 같은 사람이 의견을 여러 번 낸 경우의 파일을 보여주는 코드
@@ -219,7 +220,7 @@ any_htmlVer_all/
 ## 🔄 작업 순서
 
 ### 1(htmlConvert).ipynb
-HTML의 기안일, 보존연한을 변환
+HTML 파일의 기안일, 보존연한을 변환
 
 ---
 
@@ -342,7 +343,8 @@ documents 테이블의 attaches 컬럼에 포함된 첨부파일 경로를 변�
 ---
 
 ### 10_결재선시간DB버전.ipynb
-시간 크롤링한 테이블을 document 테이블에 연결
+- 크롤링한 테이블의 시간을 document 테이블에 연결.
+- AnyFiveActiviesCrawler.java먼저 실행하여 결재선 크롤링부터 하고 실행.
 
 **처리 방식:**
 - 크롤링 오류가 있을 수도 있으니 두 테이블 간의 제목을 비교하여 불일치 시 건너뛰고 적재 (불일치될 경우 따로 파일 생성)
@@ -391,7 +393,7 @@ deleteDocument {"sourceId":"doc_2009495_03"}
 
 ## 🛠️ 수동으로 수정해야 할 것들
 
-### 1. 추가로 수동으로 더 삭제하거나 경로를 따로 바꿔줘야 하는 경우도 있음
+### 1. 이미지의 경우 추가로 수동으로 더 삭제하거나 경로를 따로 바꿔줘야 하는 경우도 있음
 → 각 연도별 폴더 내부의 removed_sourceIds 또는 이미지 경로 수정 목록에 저장해둠
 
 ### 2. 중복 `<style>` 태그 삭제
