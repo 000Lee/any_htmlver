@@ -377,7 +377,60 @@ DB documents 테이블에서 특정 연도 문서를 조회하여 addDocument �
 1) any_htmlVer_all/새로운크롤링/해당 기간 내에 있는 문서 ID만 txt파일로 가져오는 파이썬코드.ipynb 
 2) any_htmlVer_all/새로운크롤링/누락된 문서ID 찾기.ipynb (DB와 목록크롤링한 결과를 비교하여 누락된건을 보여줍니다.)
 3) 깃허브 any_crawling을 참고하여 누락된건만 추가적으로 크롤링 후 cmds 만들기
-
+4) cmds 생성한 후 new_documents테이블의 정보들을 documents로 옮기기
+```
+-- 누락건 옮기기
+INSERT INTO documents (
+    source_id,
+    doc_num,
+    doc_type,
+    title,
+    doc_status,
+    created_at,
+    drafter_name,
+    drafter_position,
+    drafter_dept,
+    drafter_email,
+    drafter_dept_code,
+    form_name,
+    is_public,
+    end_year,
+    `references`,
+    attaches,
+    referrers,
+    activities,
+    doc_body,
+    created_date
+)
+SELECT 
+    source_id,
+    doc_num,
+    doc_type,
+    title,
+    doc_status,
+    created_at,
+    drafter_name,
+    drafter_position,
+    drafter_dept,
+    drafter_email,
+    drafter_dept_code,
+    form_name,
+    is_public,
+    end_year,
+    `references`,
+    attaches,
+    referrers,
+    activities,
+    doc_body,
+    created_date
+FROM new_documents
+WHERE source_id IN (
+    '2002390',
+    '2008214',
+    '2008497'
+-- 이런식으로 문서ID를 넣습니다.
+);
+```
 ### sourceId로 삭제하는cmds.ipynb
 특정 기간에 생성된 문서들의 삭제 명령어 파일(.cmds)을 생성하는 스크립트입니다.
 - 시작일/종료일 기간 내 생성된 문서의 `source_id` 조회
