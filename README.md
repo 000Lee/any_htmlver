@@ -383,7 +383,7 @@ DB documents 테이블에서 특정 연도 문서를 조회하여 addDocument �
 -  (any_htmlVer_all/새로운크롤링/해당 기간 내에 있는 문서 ID만 txt파일로 가져오는 파이썬코드.ipynb) 와 (any_htmlVer_all/새로운크롤링/누락된 문서ID 찾기.ipynb)의 제목 끝부분에 각각 \~1031, \~1231 숫자가 있습니다. \~1031은 2025-01-01\~2025-10-31의 누락건을 수집하기 위함이고 \~1231은 2025-11-01\~2025-12-31의 누락건을 수집하기 위함입니다.
 1) any_htmlVer_all/새로운크롤링/해당 기간 내에 있는 문서 ID만 txt파일로 가져오는 파이썬코드.ipynb 
 2) any_htmlVer_all/새로운크롤링/누락된 문서ID 찾기.ipynb (DB와 목록크롤링한 결과를 비교하여 누락된건을 보여줍니다.)
-3) 깃허브 any_crawling을 참고하여 누락된건만 추가적으로 크롤링 후 cmds 만들기
+3) 깃허브 [any_crawling](https://github.com/000Lee/any_crawling.git)을 참고하여 누락된건만 추가적으로 크롤링 후 cmds 만들기
 4) cmds 생성한 후 new_documents테이블의 정보들을 documents로 옮기기
 ```
 -- 누락건 옮기기
