@@ -474,9 +474,124 @@ deleteDocument {"sourceId":"doc_2009495_03"}
 
 ### ✨✨✨요청사항 반영 및 데이터 정합성 개선을 위한 대규모 수정✨✨✨
 - [any_approval_plus](https://github.com/000Lee/any_approval_plus.git) 요청사항 반영 및 데이터 정합성 개선 + 기존 수동 작업 항목의 자동화
+- 댓글 크롤링 추가
+  
+#### 📁 댓글 크롤링 (`댓글 크롤링/`)
+
+결재 댓글 데이터의 추출, 검증, 변환을 위한 도구 모음
+
+---
+
+##### 📋 파일 설명
+
+| 파일명 | 기능 | 설명 |
+|--------|------|------|
+| `comment_validation.ipynb` | 댓글 검증 및 추출 | HTML 파싱 로직 검증 + 전체 댓글 스캔 + DB INSERT (정합성 검사를 위해 제작함.) |
+| `comments_to_cmds.ipynb` | cmds 변환기 | DB의 comments → `addDocumentComment` cmds 변환 (이관횟수 지원) |
+| `결재댓글cmds생성기.ipynb` | cmds 변환기 (사용X) | DB의 comments → cmds 변환 ( 이전 버전) |
+| `해당 기간 내에 있는 문서 ID만 txt파일로 가져오는 파이썬코드.ipynb` | 문서ID 추출 | 전자결재 시스템에서 기간별 문서ID 크롤링 |
+| `갯수세기.ipynb` | 통계 분석 | 댓글 데이터 현황 분석 및 검증 |
+
+---
+❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗여기서부터 ❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗
+##### 🔧 사용 방법
+
+###### 1️⃣ 문서ID 추출 (`해당 기간 내에 있는 문서 ID만 txt파일로 가져오는 파이썬코드.ipynb`)
+
+특정 기간의 전자결재 문서 ID를 크롤링하여 텍스트 파일로 저장
+
+```python
+# 설정값 수정
+START_DATE = "2014-01-01"  # 시작일
+END_DATE = "2017-12-31"    # 종료일
+OUTPUT_FILE = "doc_ids_2017.txt"  # 출력 파일명
+```
+
+**실행 순서:**
+1. 셀 실행 → 브라우저 자동 실행
+2. 수동 작업 수행:
+   - 로그인 → 전자결재 → 결재 문서관리
+   - 상태 = 완료, 기간 설정 후 조회
+3. Enter 키 입력 → 자동으로 페이지별 문서ID 추출
+4. `doc_ids_XXXX.txt` 파일 생성
+
+---
+
+###### 2️⃣ 댓글 검증 및 추출 (`comment_validation.ipynb`)
+
+HTML 파일에서 결재댓글을 추출하고 DB와 비교 검증
+
+**3단계 프로세스:**
+
+| 단계 | 목적 | 내용 |
+|------|------|------|
+| **1단계** | 파싱 검증 | DB 100건 기준으로 HTML 파싱 로직 정확도 검증 |
+| **2단계** | 전체 스캔 | 1단계 100% 일치 시 → 전체 HTML 스캔 및 누락 댓글 추출 |
+| **3단계** | DB INSERT | 누락된 댓글 데이터 DB에 삽입 |
+
+```python
+# 설정값 수정
+HTML_FOLDERS = [
+    r"C:\Users\...\2010-01-01~2010-12-31\html\결재",
+    r"C:\Users\...\2011-01-01~2015-12-31\html\결재",
+    # ...
+]
+
+DB_CONFIG = {
+    'host': 'localhost',
+    'port': 3306,
+    'database': 'any_approval',
+    'user': 'root',
+    'password': '1234',
+}
+```
+
+---
+
+###### 3️⃣ cmds 변환 (`comments_to_cmds.ipynb`)
+
+DB의 comments 테이블을 `addDocumentComment` 형식의 cmds 파일로 변환
+
+```python
+# 설정값 수정
+MIGRATION_NUMBER = 7  # 이관 횟수 (예: 7 → 07로 변환)
+
+IN_EMPLOYEE_CSV = r"...\in_employee.csv"   # 재직자 CSV
+OUT_EMPLOYEE_CSV = r"...\out_employee.csv" # 퇴사자 CSV
+
+OUTPUT_FILE = r"...\comments_07.cmds"  # 출력 파일
+```
+
+**변환 규칙:**
+- `source_id`: `01_23447133_01` → `01_23447133_07` (이관횟수로 변경)
+- `source_document_id`: `23447133` → `doc_23447133_07`
+- `writer`: 사원명 → emailId 매핑
+
+**출력 형식:**
+```json
+addDocumentComment {"sourceId":"01_23279081_07","createdAt":"1720673708000","writer":{"emailId":"jychoi"},"message":"...","sourceDocumentId":"doc_23279081_07","updatedAt":"1720673708000"}
+```
+
+---
+
+##### 📊 데이터 파일
+
+| 파일명 | 설명 |
+|--------|------|
+| `doc_ids_2013.txt` | 2010~2013년 문서ID 목록 |
+| `doc_ids_2017.txt` | 2014~2017년 문서ID 목록 |
+| `doc_ids_2021.txt` | 2018~2021년 문서ID 목록 |
+| `doc_ids_2025.txt` | 2022~2025년 문서ID 목록 |
+| `actionComment_누락목록.csv` | 결재의견(actionComment) 누락 목록 |
+| `actionComment_누락목록_추가분.csv` | 결재의견 누락 추가분 |
+| `actionType_불일치목록.csv` | 결재타입 불일치 목록 |
+| `approval_data에_없는_문서.csv` | approval_data에 없는 문서 목록 |
+| `인사정보_부서코드추가.csv` | 사원명 → ID 매핑 CSV |
+| `comments_cmds.txt` | 변환된 cmds 파일 (샘플) |
 
 
 ---
+
 
 ## 💡 참고사항
 
