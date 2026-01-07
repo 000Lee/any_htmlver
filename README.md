@@ -493,7 +493,7 @@ deleteDocument {"sourceId":"doc_2009495_03"}
 | `갯수세기.ipynb` | 통계 분석 | 댓글 데이터 현황 분석 및 검증 |
 
 ---
-❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗여기서부터 ❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗
+
 ##### 🔧 사용 방법
 
 ###### 1️⃣ 문서ID 추출 (`해당 기간 내에 있는 문서 ID만 txt파일로 가져오는 파이썬코드.ipynb`)
@@ -514,10 +514,15 @@ OUTPUT_FILE = "doc_ids_2017.txt"  # 출력 파일명
    - 상태 = 완료, 기간 설정 후 조회
 3. Enter 키 입력 → 자동으로 페이지별 문서ID 추출
 4. `doc_ids_XXXX.txt` 파일 생성
-
+5. 해당 파일의 내용을 복사한 후 [any_crawling](https://github.com/000Lee/any_crawling.git)의 AnyFiveCommentCrawler.java파일의  // 크롤링 대상 문서 ID 목록 private static final String[] TARGET_DOCUMENT_IDS ={ 안에 붙여넣기
+6. [any_crawling](https://github.com/000Lee/any_crawling.git)의 AnyFiveCommentCrawler.java파일 실행
 ---
+###### 2️⃣ 갯수세기 (`갯수세기.ipynb`)
+- AnyFiveCommentCrawler.java는 작업 중단 시 복구를 위해 처리 완료된 source_document_id를 processed_ids.txt에 기록합니다.
+- 타임아웃 등의 예외 상황에서는 로그가 출력되지 않아 현재 진행률을 확인하기 어렵습니다. 본 노트북은 기록된 ID 수를 집계하여 실시간 진행 현황을 파악할 수 있도록 지원합니다.
+- data = """다음에 processed_ids.txt의 모든 내용을 붙여넣고 실행하여 사용합니다.
 
-###### 2️⃣ 댓글 검증 및 추출 (`comment_validation.ipynb`)
+###### 3️⃣ 댓글 검증 및 추출 (`comment_validation.ipynb`)
 
 HTML 파일에서 결재댓글을 추출하고 DB와 비교 검증
 
@@ -548,7 +553,7 @@ DB_CONFIG = {
 
 ---
 
-###### 3️⃣ cmds 변환 (`comments_to_cmds.ipynb`)
+######  cmds 변환 (`comments_to_cmds.ipynb`)
 
 DB의 comments 테이블을 `addDocumentComment` 형식의 cmds 파일로 변환
 
@@ -566,6 +571,7 @@ OUTPUT_FILE = r"...\comments_07.cmds"  # 출력 파일
 - `source_id`: `01_23447133_01` → `01_23447133_07` (이관횟수로 변경)
 - `source_document_id`: `23447133` → `doc_23447133_07`
 - `writer`: 사원명 → emailId 매핑
+- `source_id`의 앞 숫자는 댓글 순번 / 가운데숫자는 속한 문서 ID (source_document_id) / 마지막 숫자는 이관횟수
 
 **출력 형식:**
 ```json
@@ -586,7 +592,7 @@ addDocumentComment {"sourceId":"01_23279081_07","createdAt":"1720673708000","wri
 | `actionComment_누락목록_추가분.csv` | 결재의견 누락 추가분 |
 | `actionType_불일치목록.csv` | 결재타입 불일치 목록 |
 | `approval_data에_없는_문서.csv` | approval_data에 없는 문서 목록 |
-| `인사정보_부서코드추가.csv` | 사원명 → ID 매핑 CSV |
+| `인사정보_부서코드추가.csv` | 과거 조직도. 더이상 사용 X |
 | `comments_cmds.txt` | 변환된 cmds 파일 (샘플) |
 
 
