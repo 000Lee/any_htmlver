@@ -475,6 +475,7 @@ deleteDocument {"sourceId":"doc_2009495_03"}
 ### ✨✨✨요청사항 반영 및 데이터 정합성 개선을 위한 대규모 수정✨✨✨
 - 요청사항 반영 및 데이터 정합성 개선 + 기존 수동 작업 항목의 자동화 -> [any_approval_plus](https://github.com/000Lee/any_approval_plus.git) 
 - 댓글 크롤링 추가
+- 조직도가 수정되었습니다. 댓글 크롤링 폴더의 in_employee.csv와 out_employee.csv를 다운받아 사용해주세요
   
 #### 📁 댓글 크롤링 (`댓글 크롤링/`)
 
@@ -491,6 +492,8 @@ deleteDocument {"sourceId":"doc_2009495_03"}
 | `결재댓글cmds생성기.ipynb` | cmds 변환기 (사용X) | DB의 comments → cmds 변환 ( 이전 버전) |
 | `해당 기간 내에 있는 문서 ID만 txt파일로 가져오는 파이썬코드.ipynb` | 문서ID 추출 | 전자결재 시스템에서 기간별 문서ID 크롤링 |
 | `갯수세기.ipynb` | 통계 분석 | 댓글 데이터 현황 분석 및 검증 |
+| `in_employee.csv` | 수정된 조직도 | 재직자 조직도 |
+| `out_employee.csv` | 수정된 조직도 | 퇴사자 조직도 |
 
 ---
 
@@ -563,6 +566,7 @@ MIGRATION_NUMBER = 7  # 이관 횟수 (예: 7 → 07로 변환)
 
 IN_EMPLOYEE_CSV = r"...\in_employee.csv"   # 재직자 CSV
 OUT_EMPLOYEE_CSV = r"...\out_employee.csv" # 퇴사자 CSV
+댓글 크롤링 폴더에 있는 in_employee.csv와 out_employee.csv파일을 원하는곳에 다운로드 받고 경로를 수정하세요
 
 OUTPUT_FILE = r"...\comments_07.cmds"  # 출력 파일
 ```
