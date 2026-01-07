@@ -588,14 +588,9 @@ addDocumentComment {"sourceId":"01_23279081_07","createdAt":"1720673708000","wri
 | `doc_ids_2017.txt` | 2014~2017년 문서ID 목록 |
 | `doc_ids_2021.txt` | 2018~2021년 문서ID 목록 |
 | `doc_ids_2025.txt` | 2022~2025년 문서ID 목록 |
-| `actionComment_누락목록.csv` | 결재의견(actionComment) 누락 목록 |
-| `actionComment_누락목록_추가분.csv` | 결재의견 누락 추가분 |
-| `actionType_불일치목록.csv` | 결재타입 불일치 목록 |
-| `approval_data에_없는_문서.csv` | approval_data에 없는 문서 목록 |
-| `인사정보_부서코드추가.csv` | 과거 조직도. 더이상 사용 X |
 | `comments_cmds.txt` | 변환된 cmds 파일 (샘플) |
 
-
+- etc 폴더는 개발 중 생성된 이전 버전 코드를 보존한 것입니다. 핵심 운영 코드에 포함되지 않으며, 참조 목적으로 보존하였습니다.
 ---
 
 
