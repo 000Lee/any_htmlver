@@ -2,7 +2,7 @@
 
 다운로드한 HTML 파일을 기준으로 필요한 정보만 크롤링하여 DB에 저장하고 `.cmds` 파일을 생성하는 프로젝트입니다.
 
-## ⭐전자결재 최신 버전⭐
+## ⭐전자결재 크롤링 ＆ ｃｍｄｓ 변환 최신 버전⭐
 - 자바코드는 [any_crawling](https://github.com/000Lee/any_crawling#14-전자결재-최신-버전)을 참고
 - 파이썬코드는 [any_approval_plus](https://github.com/000Lee/any_approval_plus#전자결재-최신-버전)을 참고
 ---
